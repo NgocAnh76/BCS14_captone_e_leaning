@@ -20,7 +20,7 @@ import Login from "./pages/account/Login";
 import FromProfile from "./pages/account/profile/FromProfile";
 import Profile from "./pages/account/profile/Profile";
 import Signup from "./pages/account/Signup";
-
+import Contact from "./pages/contact/contact";
 import Course from "./pages/courses/Course";
 import CourseCatalog from "./pages/courses/CourseCatalog";
 import Detail from "./pages/detail/Detail";
@@ -35,7 +35,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./main.js";
 import "./sass/main.scss";
-import Contact from "./pages/contact/contact.jsx";
 
 const queryClient = new QueryClient();
 
