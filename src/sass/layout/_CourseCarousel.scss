@@ -1,0 +1,44 @@
+.carousel-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.course-info {
+  margin-top: 10px;
+}
+
+.course-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.course-author {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.course-category {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ff9800;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}

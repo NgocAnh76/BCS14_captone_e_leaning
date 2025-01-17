@@ -1,0 +1,1 @@
+export const trailerYoutube = /youtu\.be\/([A-Za-z0-9_-]+)/;

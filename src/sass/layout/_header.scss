@@ -1,0 +1,138 @@
+@use "../helper/variables" as *;
+@use "../helper/mixin" as *;
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  a {
+    transition: all 0.3s linear;
+    &:hover {
+      color: $color-text-hover;
+    }
+  }
+}
+.navbar {
+  background-color: $secondary;
+  color: white;
+  height: 60px;
+  position: relative;
+
+  &-top {
+    background-color: #fff;
+    padding-right: 30px;
+    font-size: 14px;
+    padding: 5px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to right, #227df9, #7462f9, #df3ef8);
+    }
+    li {
+      list-style: none;
+      padding-left: 15px;
+      .navbar-top_hotline {
+        color: red;
+      }
+      &:hover {
+        a {
+          color: $color-button-hover;
+        }
+      }
+    }
+    a {
+      color: $secondary;
+      text-transform: uppercase;
+      transition: all 0.3s linear;
+    }
+    &_social {
+      @include FlexBox(center, end);
+    }
+  }
+  &-collapse {
+    text-align: center;
+  }
+  &-nav {
+    @include FlexBox(center, space-between);
+  }
+  &-search {
+    margin-left: 100px;
+    input {
+      border-radius: 30px;
+      outline: none;
+    }
+  }
+  &-button {
+    a {
+      padding: 5px 20px;
+      border-radius: 30px;
+      background-color: $color-text-1;
+      color: $color-text-4;
+      margin-right: 10px;
+      border: 1px solid white;
+
+      transition: all 0.3s linear;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      overflow: hidden;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: $primary;
+        z-index: -1;
+        transition: all 0.5s ease-in-out;
+        transform: translateY(-100%);
+      }
+      &:hover {
+        border-color: $primary;
+        &::after {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  .nav-item {
+    a {
+      color: $color-text-1;
+      margin-right: 60px;
+    }
+  }
+}
+
+.scrolled {
+  animation: slide-down 0.5s linear forwards;
+  transition: all 0.3s linear;
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  25% {
+    transform: translateY(-60%);
+  }
+  50% {
+    transform: translateY(-30%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    &-button {
+      display: none;
+    }
+  }
+}

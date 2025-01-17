@@ -1,0 +1,88 @@
+@use "../helper/variables" as *;
+@use "../helper/mixin" as *;
+
+.footer {
+  background-color: $color-dark-1;
+  padding-top: 60px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  &_title {
+    @include StyleText($fs-1, $color-text-4, $fw-1);
+  }
+  li {
+    padding: 5px;
+    cursor: pointer;
+    &:hover {
+      .footer_item {
+        color: $color-text-hover;
+      }
+      .footer_social {
+        border-color: $primary;
+        &::after {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  &_item {
+    @include StyleText(14px, $color-dark-4, $fw-1);
+    transition: all 0.3s linear;
+  }
+  &_social {
+    margin-right: 15px;
+    transition: all 0.3s linear;
+    border-radius: 50%;
+    color: $color-text-4;
+    @include Size(40px);
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid $color-text-4;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      top: 0;
+      background-color: $primary;
+      z-index: -1;
+      transition: all 0.5s ease-in-out;
+      transform: translateY(-100%);
+    }
+    i {
+      font-size: $fs-1;
+    }
+  }
+  input {
+    width: 65%;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    padding: 20px;
+    border: 1px solid $color-text-3;
+    margin-right: 5px;
+  }
+  button {
+    @include StyleText(12px, $color-text-4, $fw-2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: $primary;
+    border: none;
+    transition: all 0.3s linear;
+    &:hover {
+      background-color: $color-button-hover;
+    }
+  }
+  &_bottom {
+    border-top: 1px solid $color-dark-3;
+    text-align: center;
+    p {
+      padding: 20px;
+      color: $color-dark-4;
+    }
+  }
+}
